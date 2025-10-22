@@ -54,6 +54,12 @@ print_number:
     push rdx
     push rsi
 
+    ; sys_write:
+    ; rax - 1 (номер комадны)
+    ; rdi - 1 (stdout)
+    ; rsi - информация, которую надо вывести
+    ; rdx - длина информации, которую надо вывести
+    
     mov ecx, 10         ; делитель
     lea rsi, [char_buffer+3] ; указываем на конец буфера +1
     mov byte [rsi], 0   ; терминатор
